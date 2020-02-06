@@ -1,178 +1,125 @@
-html{
-    scroll-behavior: smooth;
-}
+/*STARTER CODE*/
+
+/*
+We have started some of the selectors for you.
+For others we have provided hints on what the selectors should be.
+There are some missing selectors.
+
+Make sure to learn what the starter code does!!
+*/
 
 body{
-  background-color: #ddd;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
+  color: solid #000000;
+  font-family:'Andika', sans-serif;
+  font-size: 16px;
+  margin: 1.2em;
+  background-size: cover ;
+  background-position: center;
+  background-image: url("../images/pigeon-background.JPEG");
+  background-repeat: no-repeat;
+  background-color: #DDDDDD;
+}
+
+main{
+  margin-bottom: 100px;
 }
 
 h1{
-  font-size: 50px;
-  line-height: 1;
-  padding: 50px 0;
+  color: #8000FF;
+  font-size: 2em;
+  line-height: 1.5;
   text-align: center;
 }
 
-h2{
-  font-size: 32px;
-  line-height: 1.5;
+caption{
+  margin:5px 0px;
 }
 
-nav li{
-  display:inline;
-  padding-right:20px;
+p{
+  font-size: 16px;
+  color:solid #000000;
+  padding-top: 10px;
 }
 
-nav a{
-  color: #000000;
-  font-weight: bold;
-  text-decoration: none; 
+a:link{
+  font-size: 16px;
+  color: #B21F50;
+  text-decoration-style: wavy;
 }
 
-nav a:hover{
-  text-decoration: underline;
+table{
+    border: 2px solid #000000;
+    margin: 0 auto;
+    border-radius: 15px;
+    border-collapse: separate;
 }
 
-.skip a{
-  background: #FFFFFF;
-  left: 0;
-  padding: 6px;
-  -webkit-transition: top 1s ease-out;
-  transition: top 1s ease-out;
-  z-index: 1;
-  position: absolute;
-  top: -40px;
-  overflow: hidden;
+thead th:first-child{
+  border-radius:15px 0 0 0;
 }
 
-/* https://accessibility.psu.edu/skipnav/skiplinks/ */
+thead th:last-child{
+  border-radius: 0 15px 0 0;
+}
 
-.skip a:focus, .skip a:active{
-  position: relative;
-  overflow: visible;
-  top:0;
-  left:0;
+tbody tr:last-child th:first-child{
+  border-bottom-left-radius: 15px;
+
+}
+
+tbody tr:last-child td:last-child{
+  border-bottom-right-radius: 15px;
+}
+
+.colhead{
+  background-color: #7e0820;
+  color:  #FFFFFF;
+  min-width: 100px;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.rowhead{
+  border-top: 2px solid #000000;
+}
+
+/* tr{
+} */
+
+td{
+  padding: 15px;
+  text-align: center;
+  border-top: 2px solid #000000;
+
+}
+/* 
+tr{
+  border: 2px solid black;
+} */
+
+tr:nth-child(odd){
+  background-color: #D1D1D1;
+}
+
+tr:nth-child(even){
+  background-color: transparent;
+}
+
+tr:hover{
+  background-color: rgba(126, 8, 32, .5);;
+}
+
+*:focus{
   border: 2px solid #000000;
-} 
+}
 
 footer{
-  background-color: #000000;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  background:#000000;
+  text-align:center;
   color: #FFFFFF;
-  grid-column: 1 / -1;  /*Can you explain what this does?*/
-  grid-row: 7 / auto;   /*Can you rewrite it?*/
-  padding-top: 30px;
-  text-align: center;
-}
-
-nav{
-  background-color: #ddd;
-  padding: 20px 0; 
-  text-align: left;
-  grid-row: 1/-1;
-
-
-}
-
-header{
-  background-attachment: fixed; /* Parallax effect */     
-  background-position: center;  /* Parallax effect */
-  background-repeat: no-repeat; /* Parallax effect */
-  background-size: cover;       /* Parallax effect */
-  color: #FFFFFF;
-  height: 400px;                /* Parallax effect */
-  background-image: url("../images/header.jpg");
-  grid-column: 1/-1;
-  grid-row: 2;
-}
-
-header p{
-  color: #FFFFFF;
-  font-size: 24px;
-  padding: 0 100px;
-  text-align: center;
-}
-
-.container{
-  display: grid;
-  grid-template-columns: 100px 400px 100px;
-  grid-template-rows: 30px 5 auto 100px;
-  grid-row-gap: 15px;
-}
-
-nav{
-  grid-row: 1/1;
-  grid-column: 1/-1;
-}
-
-.about, .method, .clients, .contact{
-  grid-column: 2/span 1;
-
-}
-
-.about-image, .method-image, .clients-image, .contact-image{
-  grid-column: 1/-1;
-  max-height: 700px;
-  overflow: hidden;
-}
-
-.about, .about-image{
-  grid-row: 3/span 1;
-}
-
-.method, .method-image{
-  grid-row: 4/span 1;
-}
-
-.clients, .clients-image{
-  grid-row: 5/span 1;
-}
-
-.contact, .contact-image{
-  grid-row: 6/span 1;
-}
-
-.text-block{
-  background-color: rgba(255, 255, 255, .8);
-  border: 10px solid #000000;
-  padding: 30px;
-  justify-self: center;
-  align-self: center;
-}
-
-@media all and (min-width: 800px){
-
-  .container{
-  grid-template-columns: 59px auto 500px auto 50px;
-  grid-template-rows: 70px 400px 400px 400px 400px 400px 100px;
-  }
-
-  nav{
-    background-color: #ddd;
-    text-align: right;
-    padding: 35px 0px;
-    align-self: center;
-  }
-
-  .about, .clients, .method-image, .contact-image{
-    grid-column: 3/span 2;
-  }
-
-  .about-image, .clients-image, .method, .contact{
-    grid-column: 2/span 2;
-    }
-
-}  /*End the media query*/
-
-@media screen and (prefers-reduced-motion: reduce){
-  html{
-      scroll-behavior: auto; /* Removes scroll animation */
-  }
-
-  .skip a{
-    -webkit-transition: none;
-    transition: none;
-  }
+  min-height: 60px;
 }
